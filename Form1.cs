@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace XorCipherR
 {
     public partial class Form1 : Form

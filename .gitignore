@@ -1,27 +1,31 @@
 ```
 # Compiled and build artifacts
-*.o
 *.obj
 *.exe
 *.dll
-*.so
+*.pdb
+*.user
+*.aps
+*.ncb
+*.suo
+*.ilk
+*.exp
+*.lib
+*.o
 *.a
-*.out
+*.so
+*.dylib
 
 # Dependencies
-node_modules/
-venv/
-.venv/
-__pycache__/
-.mypy_cache/
-.pytest_cache/
-target/
-.gradle/
+packages/
+bin/
+obj/
 
 # Logs and temp files
 *.log
 *.tmp
-*.swp
+*.temp
+*.cache
 
 # Environment
 .env
@@ -29,39 +33,15 @@ target/
 *.env.*
 
 # Editors
-.vscode/
-.idea/
+.vs/
+.vshost.exe
+.userprefs
+*.userosscache
+*.sln.docstates
 
 # OS generated files
 .DS_Store
 Thumbs.db
-
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
-# Compressed files
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
+ehthumbs.db
+Icon?
 ```

@@ -9,9 +9,6 @@ namespace XorCipherR
             InitializeComponent();
         }
 
-        /// <summary>
-        /// XOR encryption/decryption algorithm
-        /// </summary>
         private string XorCipher(string input, string key)
         {
             if (string.IsNullOrEmpty(key))
@@ -25,9 +22,6 @@ namespace XorCipherR
             return new string(result);
         }
 
-        /// <summary>
-        /// Convert string to hex representation
-        /// </summary>
         private string StringToHex(string input)
         {
             StringBuilder hex = new StringBuilder();
@@ -38,9 +32,6 @@ namespace XorCipherR
             return hex.ToString();
         }
 
-        /// <summary>
-        /// Convert hex representation back to string
-        /// </summary>
         private string HexToString(string hex)
         {
             try
@@ -59,11 +50,9 @@ namespace XorCipherR
             }
             catch
             {
-                return hex; // Return as-is if conversion fails
+                return hex; 
             }
         }
-
-        #region Encrypt Tab Event Handlers
 
         private void BtnEncrypt_Click(object? sender, EventArgs e)
         {
@@ -72,14 +61,14 @@ namespace XorCipherR
 
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("Please enter text to encrypt.", "Warning",
+                MessageBox.Show("Пожалуйста, введите текст", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrEmpty(key))
             {
-                MessageBox.Show("Please enter an encryption key.", "Warning",
+                MessageBox.Show("Пожалуйста, введите ключ", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -92,7 +81,7 @@ namespace XorCipherR
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Encryption error: {ex.Message}", "Error",
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -108,7 +97,7 @@ namespace XorCipherR
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error loading file: {ex.Message}", "Error",
+                    MessageBox.Show($"Ошибка загрузки файла: {ex.Message}", "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -118,7 +107,7 @@ namespace XorCipherR
         {
             if (string.IsNullOrEmpty(txtEncryptOutput.Text))
             {
-                MessageBox.Show("No encrypted data to save.", "Warning",
+                MessageBox.Show("Нет данных для сохранения", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -129,12 +118,12 @@ namespace XorCipherR
                 try
                 {
                     File.WriteAllText(saveFileDialog.FileName, txtEncryptOutput.Text);
-                    MessageBox.Show("Encrypted data saved successfully!", "Success",
+                    MessageBox.Show("Успешно сохранено", "Успешно",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error saving file: {ex.Message}", "Error",
+                    MessageBox.Show($"Ошибка сохранения: {ex.Message}", "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -147,10 +136,6 @@ namespace XorCipherR
             txtEncryptOutput.Clear();
         }
 
-        #endregion
-
-        #region Decrypt Tab Event Handlers
-
         private void BtnDecrypt_Click(object? sender, EventArgs e)
         {
             string input = txtDecryptInput.Text;
@@ -158,29 +143,29 @@ namespace XorCipherR
 
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("Please enter encrypted text to decrypt.", "Warning",
+                MessageBox.Show("Пожалуйста, введите текст", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrEmpty(key))
             {
-                MessageBox.Show("Please enter a decryption key.", "Warning",
+                MessageBox.Show("Пожалуйста, введите ключ", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                // First convert from hex back to encrypted string
+         
                 string encryptedData = HexToString(input);
-                // Then decrypt using XOR
                 string decrypted = XorCipher(encryptedData, key);
+
                 txtDecryptOutput.Text = decrypted;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Decryption error: {ex.Message}", "Error",
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -196,7 +181,7 @@ namespace XorCipherR
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error loading file: {ex.Message}", "Error",
+                    MessageBox.Show($"Ошибка загрузки: {ex.Message}", "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -206,7 +191,7 @@ namespace XorCipherR
         {
             if (string.IsNullOrEmpty(txtDecryptOutput.Text))
             {
-                MessageBox.Show("No decrypted data to save.", "Warning",
+                MessageBox.Show("Нет данных для сохранения", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -217,12 +202,12 @@ namespace XorCipherR
                 try
                 {
                     File.WriteAllText(saveFileDialog.FileName, txtDecryptOutput.Text);
-                    MessageBox.Show("Decrypted data saved successfully!", "Success",
+                    MessageBox.Show("Успешно сохранено", "Успешно",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error saving file: {ex.Message}", "Error",
+                    MessageBox.Show($"Ошибка сохранения: {ex.Message}", "Ошибка",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -234,7 +219,5 @@ namespace XorCipherR
             txtDecryptKey.Clear();
             txtDecryptOutput.Clear();
         }
-
-        #endregion
     }
 }

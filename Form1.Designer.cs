@@ -304,6 +304,7 @@
             // 
             btnDecryptLoadFile.AutoSize = true;
             btnDecryptLoadFile.BackColor = Color.FromArgb(100, 100, 100);
+            btnDecryptLoadFile.Cursor = Cursors.Hand;
             btnDecryptLoadFile.FlatAppearance.BorderSize = 0;
             btnDecryptLoadFile.FlatStyle = FlatStyle.Flat;
             btnDecryptLoadFile.Font = new Font("Segoe UI", 9F);
@@ -344,6 +345,7 @@
             // btnDecrypt
             // 
             btnDecrypt.BackColor = Color.FromArgb(58, 58, 58);
+            btnDecrypt.Cursor = Cursors.Hand;
             btnDecrypt.FlatAppearance.BorderSize = 0;
             btnDecrypt.FlatStyle = FlatStyle.Flat;
             btnDecrypt.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
@@ -385,6 +387,7 @@
             // 
             btnDecryptSave.AutoSize = true;
             btnDecryptSave.BackColor = Color.FromArgb(100, 100, 100);
+            btnDecryptSave.Cursor = Cursors.Hand;
             btnDecryptSave.FlatAppearance.BorderSize = 0;
             btnDecryptSave.FlatStyle = FlatStyle.Flat;
             btnDecryptSave.Font = new Font("Segoe UI", 9F);
@@ -403,6 +406,7 @@
             // 
             btnDecryptClear.AutoSize = true;
             btnDecryptClear.BackColor = Color.FromArgb(140, 140, 140);
+            btnDecryptClear.Cursor = Cursors.Hand;
             btnDecryptClear.FlatAppearance.BorderSize = 0;
             btnDecryptClear.FlatStyle = FlatStyle.Flat;
             btnDecryptClear.Font = new Font("Segoe UI", 9F);

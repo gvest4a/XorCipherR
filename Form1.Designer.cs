@@ -436,7 +436,9 @@
             BackColor = Color.FromArgb(230, 230, 230);
             ClientSize = new Size(1000, 600);
             Controls.Add(tabControl);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             MinimumSize = new Size(800, 500);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
